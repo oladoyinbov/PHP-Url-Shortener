@@ -1,0 +1,31 @@
+/*
+ * Follow Me On Twitter - @wildfoster.
+ *
+ * (c) Oladoyinbo Vincent <support@digitalpoint.com.ng>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+*{
+    font-weight: 500;
+}
+.bg-font{
+font-family: 'Titillium Web', sans-serif;
+}
+
+#link{
+display:none;
+}
+
+.result{
+display:none;
+}
+
+.err{
+display:none;
+}
+
+.successpop{
+font-size: 18px;
+}

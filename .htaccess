@@ -1,0 +1,15 @@
+RewriteEngine On
+
+ErrorDocument 400 /404-page
+ErrorDocument 401 /404-page
+ErrorDocument 403 /404-page
+ErrorDocument 404 /404-page
+ErrorDocument 500 /404-page
+
+
+RewriteRule ^r/(.*)$ index.php?go=$1
+RewriteRule ^404-page$ 404.php
+RewriteRule ^Process$ Process.php
+RewriteRule ^pages$ page.php
+RewriteRule ^pages/contact\/?$ page.php?page=contact
+RewriteRule ^pages/privacy-policy\/?$ page.php?page=privacy-policy
