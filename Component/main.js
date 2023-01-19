@@ -10,6 +10,7 @@
 
 /* Get Form Submission Result */
 const text = document.getElementById("link");
+const link2 = document.getElementById("link2");
 
 /* Then Run Copy() To Create A Working Copy To Clipboard Function */
 function Copy(){
@@ -21,6 +22,16 @@ function Copy(){
     $(".ch").attr("title").text("Copied!");
 }
 
+function Copy2(){
+
+    link2.select();
+    link2.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(link2.value);
+
+    $(".hist").attr("title").text("Copied");
+
+}
+
 
 /*  Bootstrap ToolTip JS Code  */
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-tool="tooltip"]'))
@@ -29,10 +40,23 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 });
 
 
+/* Preloader Styles */
 
+document.querySelector(".loading").style.display = "block";
+document.querySelector("#body").style.display = "none";
+
+window.onload = function(){
+    document.querySelector(".loading").style.display = "none";
+    document.querySelector("#body").style.display = "block";
+}
+
+
+/* When Window Is Ready */
 $(document).ready(function(){
 
+$(".loading").css("display", "none");
 
+$("#link2").css("display", "none");
     /* Validate Input Value Length When Form is Focused */
 
     $("#url").keyup(function(){
@@ -62,7 +86,7 @@ $(document).ready(function(){
 $(document).on("submit", "#shorten", function(e){
 
 const urldata = $("#url").val();
-const firstval = filename(urldata.toLowerCase());
+const firstval = urldata.toLowerCase();
 $("#firstval").text(firstval);
 
 /* Post All Data to Process.php, Then Get a Result Feedback */

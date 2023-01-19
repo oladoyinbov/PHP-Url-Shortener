@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /*
  * Follow Me On Twitter - @wildfoster.
  *

@@ -1,4 +1,7 @@
 <?php
+declare(strict_types=1);
+
+session_start();
 
 /*
  * Follow Me On Twitter - @wildfoster.
@@ -9,7 +12,7 @@
  * file that was distributed with this source code.
  */
 
-declare(strict_types=1);
+
 include "Class.php";
 include "functions.php";
 require "config.php";
@@ -19,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["url"])){
 
 
     //CHECK IF URL INPUT IS VALID
-    if(empty($_POST["url"]) || $_POST["url"] == 0 && !is_link($_POST["url"])){
+    if(empty($_POST["url"]) || strlen($_POST["url"]) == 0){
         Text::print("200");
         return;
     }
@@ -43,14 +46,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["url"])){
     $url = sanitize_url($_POST["url"]);
     $base = basename($url);
     $rand = random_value();
+    $user_ip = $_SERVER['REMOTE_ADDR'];
     $destination = "\$datas['".$rand."'] = '".$url."';";
     
     //OPEN FILE AND SAVE SHORTENED LINKS USING @fopen and @fwrite
     $furls = fopen("urls.php", "a");
 
     if(fwrite($furls, $destination.PHP_EOL) == TRUE){
-        $result = __home__."/r/".$rand;
+        $result = __home__."/r".$rand;
         Text::print($result);
+
+        $history_format = $user_ip."()".$url."()".$rand;
+        $history = array(
+        'history' => $history_format
+     );
+        $_SESSION["urlhistory"] = $history;
 
     };
     fclose($furls);

@@ -10,9 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@900&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet" type="text/css" />
-<link href="Component/main.css" rel="stylesheet">
+<link href="<?php echo __home__?>/Component/main.css" rel="stylesheet">
 </head>
 <body>
+<div class="d-flex justify-content-center loading"><img class="loading" src="<?php print __home__?>/storage/spinner.gif"/></div>
+  <div id="body">
   <noscript>
 <h4 class="alert alert-danger">Your browser does not support JavaScript!</h4>
 </noscript>

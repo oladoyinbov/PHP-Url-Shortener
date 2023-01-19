@@ -7,7 +7,7 @@ ErrorDocument 404 /404-page
 ErrorDocument 500 /404-page
 
 
-RewriteRule ^r/(.*)$ index.php?go=$1
+RewriteRule ^r(.*)$ index.php?go=$1
 RewriteRule ^404-page$ 404.php
 RewriteRule ^Process$ Process.php
 RewriteRule ^pages$ page.php

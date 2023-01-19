@@ -18,6 +18,7 @@ if(isset($_GET["go"])){
     return;
     }
 
+    
     require "header.php";
 
     require Views("index");

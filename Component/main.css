@@ -18,6 +18,14 @@ font-family: 'Titillium Web', sans-serif;
 display:none;
 }
 
+#link2 {
+display:none;
+}
+
+.hide{
+    display: hidden;
+}
+
 .result{
 display:none;
 }
@@ -28,4 +36,8 @@ display:none;
 
 .successpop{
 font-size: 18px;
+}
+
+.loading{
+    display:none;
 }

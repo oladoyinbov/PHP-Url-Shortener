@@ -1,6 +1,6 @@
 <div class="p-5 my-5 bg-primary text-white ">
 <div class="d-flex justify-content-between">
-  <div><?php Text::print("Generate Shorten URLs. ", "h4", "bg-font"); ?></div> <div><img src="storage/link2.svg" width="200px" height="200px"/></div>
+  <div><?php Text::print("Generate Shorten URLs For Free ", "h4", "bg-font"); ?><br> No Hidden Cost. <br> No Premium Plan. <br> No Ads <i class="fa fa-smile"></i> <br> Generate Short Url in a Sec. <br> It's 100% Free.. </div> <div><img src="storage/link2.svg" width="200px" height="200px"/></div>
  </div>
  <div class="d-flex justify-content-center"><i class="fa-duotone fa-chevrons-down fa-fade fa-2x"></i></div>
  </div>
@@ -9,9 +9,9 @@
 <form id="shorten">
 <div class="mb-3">
 <label class="form-label"><?php Text::print("Enter Long Url:", "p"); ?> </label>
-<input type="url" placeholder="Enter Link" name="url" id="url" class="form-control"/>
+<input type="url" placeholder="<?php Text::print(__search_form_value__); ?>" name="url" id="url" class="form-control"/>
 </div>
-<input type="submit" value="SHORTEN.." class="btn btn-primary"/>
+<input type="submit" value="<?php Text::print(__search_form_button__); ?>" class="btn btn-primary"/>
 </form>
 
 </div><br/>
@@ -24,9 +24,24 @@
 
 <div class="container result">
 <div class="alert alert-success d-flex justify-content-between flex-wrap">
-    <div id="firstval"></div><div><input type="text" id="link" value="NEW LINK2" readonly/> <a href="/jsjs" id="resultvisiblelink"><span id="resultvisible"></span></a>  <div class="p-2 btn btn-primary ch" onclick="Copy()" data-bs-toggle="modal" data-bs-tool="tooltip" data-bs-target="#myModal" title="Copy!"><i class="fad fa-copy"></i> <?php Text::print("Copy"); ?></div></div>
+    <div id="firstval" class="text-truncate"></div><div><input type="text" id="link" value="DEMO LINK" readonly/> <a href="/" id="resultvisiblelink"><span id="resultvisible"></span></a>  <div class="p-2 btn btn-primary ch" onclick="Copy()" data-bs-toggle="modal" data-bs-tool="tooltip" data-bs-target="#myModal" title="Copy!"><i class="fad fa-copy"></i> <?php Text::print("Copy"); ?></div></div>
 </div>
 </div>
+
+
+<div class="d-flex justify-content-around flex-wrap bg-light bg-dark text-white p-5">
+<?php urlhistory(); ?>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
 
 <section>
 <div class="p-5  bg-warning">
