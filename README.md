@@ -1,4 +1,4 @@
-<img alt="GitHub" src="https://img.shields.io/github/license/oladoyinboadverts/PHP-Url-Shortener?style=for-the-badge">
+<img alt="GitHub" src="https://img.shields.io/github/license/oladoyinboadverts/PHP-Url-Shortener?style=for-the-badge"> <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/oladoyinboadverts/PHP-Url-Shortener?style=for-the-badge">
 
 # PHP Url Shortner
  A Customizable Simple PHP Url Shortener Without Database
