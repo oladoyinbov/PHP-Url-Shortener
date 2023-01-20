@@ -38,8 +38,9 @@ return $all;;
 // ####### Sanitize Url Function ########
 
 function sanitize_url($url){
-$url = filter_var($url, FILTER_SANITIZE_URL);
-return $url;
+    $url = trim($url);
+    $url = filter_var($url, FILTER_SANITIZE_URL);
+    return $url;
 
 }
 
@@ -77,7 +78,7 @@ $full_url = __home__."/r".$h2[2];
 echo '<div class="container">
 <div class="d-flex justify-content-center bg-font mb-2"><h4>.   .   .  .</h4></div>
   <div class="alert alert-light d-flex justify-content-between flex-wrap">
-    <div class="d-inline-block text-truncate">'.$h2[1].'</div><div><input type="text" class="d-none" id="link2" value="'.$full_url.'" readonly/> <a href="'.$full_url.'">'.$full_url.'</a>  <div class="p-2 btn btn-primary ch" onclick="Copy2()" data-bs-toggle="modal" data-bs-tool="tooltip" data-bs-target="#myModal" title="Copy!"><i class="fad fa-copy"></i></div></div>
+    <div class="d-inline-block text-truncate">'.$h2[1].'</div><div><input type="text" class="d-none" id="link2" value="'.$full_url.'" readonly/> <a href="'.$full_url.'">'.$full_url.'</a>  <div class="p-2 btn btn-primary ch" onclick="Copy2()" data-bs-toggle="modal" data-bs-tool="tooltip" data-bs-target="#myModal" title="Copy!"><i class="fad fa-copy"></i> Copy</div></div>
 </div>';
 
 }
@@ -87,8 +88,9 @@ echo '<div class="container">
 // ############### First Url Validation #################
 
 function validate_url($value){
-$value = filter_var($value, FILTER_VALIDATE_URL);
-return $value;
+    $value = trim($value);
+    $value = filter_var($value, FILTER_VALIDATE_URL);
+    return $value;
      
 }
 
@@ -99,7 +101,7 @@ return $value;
 function random_value(){
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $randomString = '';
-    $n = 4;
+    $n = 5;
  
     for ($i = 0; $i < $n; $i++) {
         $index = rand(0, strlen($characters) - 1);
@@ -108,6 +110,7 @@ function random_value(){
  
     return $randomString;
 
+   
 }
 
 
@@ -116,10 +119,23 @@ function random_value(){
 
 function checkurl($value)
 {
+    $value = trim($value);
+    $url_validation_regex = "/^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/"; 
+    return preg_match($url_validation_regex, $value);
+}
 
-    $regex = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
-    return preg_match($regex, $value);
-  
+
+function checkbasename($value){
+$value = trim($value);
+$base = basename($value);
+$mainbase = basename(__home__);
+if($base == $mainbase){
+echo true;
+}
+else{
+   echo false; 
+}
+
 }
 
 

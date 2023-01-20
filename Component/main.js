@@ -42,13 +42,6 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 
 /* Preloader Styles */
 
-document.querySelector(".loading").style.display = "block";
-document.querySelector("#body").style.display = "none";
-
-window.onload = function(){
-    document.querySelector(".loading").style.display = "none";
-    document.querySelector("#body").style.display = "block";
-}
 
 
 /* When Window Is Ready */
@@ -104,19 +97,26 @@ return 0;
     }
 
     /* Check If Process Result is 202 */
-    if(result == 202){
+    if(result == 302){
+        $(".err").css("display", "block");
+        $(".result").css("display","none");
+$("#err_text").text("Enter a Valid Domain!!!");
+return 0;
+    }
+
+    /* Check If Process Result is 202 */
+
+    if(result == 301){
         $(".err").css("display", "block");
         $(".result").css("display","none");
 $("#err_text").text("Invalid Url");
 return 0;
     }
 
-    /* Check If Process Result is 202 */
-
-    if(result == 202){
+    if(result == 303){
         $(".err").css("display", "block");
         $(".result").css("display","none");
-$("#err_text").text("Invalid Url");
+$("#err_text").text("You Can't Shorten Our Generated Link!");
 return 0;
     }
     

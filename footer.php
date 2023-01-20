@@ -17,5 +17,5 @@
 </div>
 </div>
 </body>
-<script src="<?php echo __home__?>Component/main.js"></script>
+<script src="<?php echo __home__?>/Component/main.js"></script>
 </html>

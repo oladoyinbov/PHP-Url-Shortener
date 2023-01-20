@@ -23,22 +23,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["url"])){
 
     //CHECK IF URL INPUT IS VALID
     if(empty($_POST["url"]) || strlen($_POST["url"]) == 0){
-        Text::print("200");
-        return;
-    }
-    
-    if(validate_url($_POST["url"]) == false){
-        Text::print("202");
+        Text::print("302");
         return;
     }
     
     if(checkurl($_POST["url"]) == 0){
-        Text::print("202");
+        Text::print("301");
     return;
     }
     
+    if(checkurl($_POST["url"]) == 0){
+        Text::print("301");
+    return;
+    }
     
-    
+    if(checkbasename($_POST["url"]) == true){
+     Text::print("303");
+     return;
+    }
     
     
     //INSERT CREATED SHORTNED URL IN urls.php (datas[]) ARRAY
@@ -50,8 +52,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["url"])){
     $destination = "\$datas['".$rand."'] = '".$url."';";
     
     //OPEN FILE AND SAVE SHORTENED LINKS USING @fopen and @fwrite
+    // fopen( string $filename , string $mode [, bool $use_include_path [, resource $context ]]): resource
     $furls = fopen("urls.php", "a");
 
+
+    // fwrite( resource $handle , string $string [, int $length ]): int
     if(fwrite($furls, $destination.PHP_EOL) == TRUE){
         $result = __home__."/r".$rand;
         Text::print($result);
@@ -63,6 +68,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["url"])){
         $_SESSION["urlhistory"] = $history;
 
     };
+
+    // fclose( resource $handle ): bool
     fclose($furls);
     
     }

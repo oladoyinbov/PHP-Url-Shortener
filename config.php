@@ -16,6 +16,11 @@
 
 define("__home__", "http://127.0.0.1/urlshort");
 
+// ######## Site Name And Description ###########
+
+define("__site_name__", "Url Shortner");
+define("__site_desc__", "Short Urls Made Easy");
+
 // ######## Customize Form Data ########
 
 define("__search_form_value__", "Paste Url, Let's Shorten It...");
