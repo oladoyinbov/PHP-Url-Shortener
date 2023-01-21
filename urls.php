@@ -22,4 +22,3 @@ $datas = array();
 //DO NOT DELETE THE DATAS ARRAY!!!!
 
 $datas['NDmRdM4'] = 'https://wildwap.com';
-

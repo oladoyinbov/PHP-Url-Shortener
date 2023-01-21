@@ -135,7 +135,7 @@ return 0;
     // Set Copy Button Attribute Value
     $("#link").val(result);
 
-   
+
    
     
 });

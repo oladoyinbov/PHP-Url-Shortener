@@ -14,8 +14,7 @@
 <link href="<?php echo __home__?>/Component/main.css" rel="stylesheet">
 </head>
 <body>
-<div class="d-flex justify-content-center loading"><img class="loading" src="<?php print __home__?>/storage/spinner.gif"/></div>
-  <div id="body">
+ <div id="body">
   <noscript>
 <h4 class="alert alert-danger">Your browser does not support JavaScript!</h4>
 </noscript>

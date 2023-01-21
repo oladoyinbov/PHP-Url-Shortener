@@ -13,3 +13,4 @@ RewriteRule ^Process$ Process.php
 RewriteRule ^pages$ page.php
 RewriteRule ^pages/contact\/?$ page.php?page=contact
 RewriteRule ^pages/privacy-policy\/?$ page.php?page=privacy-policy
+RewriteRule ^generate/qrcode/(.*)$ qrender.php?for=$1

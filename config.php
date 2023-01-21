@@ -34,7 +34,16 @@ define("__footer_text__", "Created By Oladoyinbo Vincent");
 
 // ######## Display Text When User Doesn't Have Any Url History ########
 
-define("__homepage_no_history_text____", "Short Urls Makes Live Easier..");
+define("__homepage_no_history_text__", "Short Urls Makes Live Easier..");
+
+
+// EMAIL CONFIG
+
+define("__site_email__", "oladoyinbov@gmail.com");
+define("__mail_host__", "smtp.mailtrap.io");
+define("__mail_user__", "f165ca41639fb4");
+define("__mail_password__", "619918ae5f0fce");
+define("__mail_port__", 2525);
 
 
 //########## CONTACTS LINKS CONFIG ###########
