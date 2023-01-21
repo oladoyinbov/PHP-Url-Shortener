@@ -13,7 +13,7 @@ declare(strict_types=1);
 require "autoloader.php";
 
 if(isset($_GET["go"])){
-    $shortval = $_GET["go"];
+    $shortval = strip_tags(trim($_GET["go"]));
     $process::execute($shortval);
     return;
     }
