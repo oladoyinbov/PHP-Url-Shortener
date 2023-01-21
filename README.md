@@ -11,8 +11,24 @@
 - Storage Folder contains all images used in the script.
 - Component Folder contains the styles and scripts used on the application.
 
+# Features
+- No database required
+- Built with Bootstrap 5
+- Pure and Sanitized Codes.
+- Easy to use
+- Responsive Design
+- SEO Friendly
+- All form input are perfectly sanitized.
+
+# Requirements
+- Apache server
+- mode_rewrite enabled
+- Intl PHP extension
+- Mbstring PHP extension
+- XML PHP extension
+- JSON PHP extension
+
 
 # Note
-
 Do not delete ```urls.php``` file in the script directory!!!.
 
