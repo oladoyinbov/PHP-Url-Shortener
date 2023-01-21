@@ -1,7 +1,7 @@
 <img alt="GitHub" src="https://img.shields.io/github/license/oladoyinboadverts/PHP-Url-Shortener?style=for-the-badge"> <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/oladoyinboadverts/PHP-Url-Shortener?style=for-the-badge">
 
 # PHP Url Shortner
- A Customizable Simple PHP Url Shortener Without Database
+ A Customizable Simple PHP Url Shortener Without Database.
 
 # Usage
 
@@ -19,6 +19,7 @@
 - Responsive Design
 - SEO Friendly
 - All form input are perfectly sanitized.
+- Fully optimized for mobile, desktop, or tablets.
 
 # Requirements
 - Apache server
@@ -27,6 +28,9 @@
 - Mbstring PHP extension
 - XML PHP extension
 - JSON PHP extension
+- cURL Extension
+- OpenSSL PHP Extension
+- PHP 7.x - 8.x.
 
 
 # Note
