@@ -34,7 +34,7 @@ define("__footer_text__", "Created By Oladoyinbo Vincent");
 
 // ######## Display Text When User Doesn't Have Any Url History ########
 
-define("__homepage_no_history_text__", "Short Urls Makes Live Easier..");
+define("__homepage_no_history_text____", "Short Urls Makes Live Easier..");
 
 
 // EMAIL CONFIG
